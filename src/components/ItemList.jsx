@@ -1,23 +1,26 @@
 import React from "react";
 import SingleItem from "./SingleItem";
-import { artistArray } from "../assets/database/artists";
 
-const itemList = ({ title, items }) => {
-  console.log(items);
+const itemList = ({ title, items, itemsArray, path, idPath }) => {
+  //console.log(items);
   return (
     <div className="item-list">
       <div className="item-list__header">
         <h2>{title} Populares</h2>
-        <a className="item-list__link" href="/">
+        <a href={path} className="item-list__link">
           Mostrar tudo
         </a>
       </div>
 
       <div className="item-list__container">
-        {artistArray
+        {itemsArray
           .filter((currentValue, index) => index < items)
           .map((currObj, index) => (
-            <SingleItem {...currObj} key={`${title}-${index}`} />
+            <SingleItem
+              idPath={idPath}
+              {...currObj}
+              key={`${title}-${index}`}
+            />
           ))}
       </div>
     </div>
