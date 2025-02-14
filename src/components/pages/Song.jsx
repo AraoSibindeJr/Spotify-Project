@@ -1,5 +1,6 @@
 import React from "react";
 import Player from "../Player";
+import { Link } from "react-router-dom";
 
 const Song = () => {
   return (
@@ -14,14 +15,14 @@ const Song = () => {
       </div>
 
       <div className="song__bar">
-        <div className="song__artist-image">
+        <Link to="/artist/1" className="song__artist-image">
           <img
             width={75}
             height={75}
             src="https://i.scdn.co/image/ab6761610000517499c26e8fb91634b00764bbb9"
             alt="Imagem do Artista Z"
           />
-        </div>
+        </Link>
 
         <Player />
         <div>

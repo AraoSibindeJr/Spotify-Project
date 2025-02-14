@@ -5,19 +5,23 @@ import {
   faBackwardStep,
   faForwardStep,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Player = () => {
   return (
     <div className="player">
       <div className="player__controllers">
-        <FontAwesomeIcon className="player__icon" icon={faBackwardStep} />
+        <Link to="/song/1">
+          <FontAwesomeIcon className="player__icon" icon={faBackwardStep} />
+        </Link>
 
         <FontAwesomeIcon
           className="player__icon--play player__icon"
           icon={faCirclePlay}
         />
-
-        <FontAwesomeIcon className="player__icon" icon={faForwardStep} />
+        <Link to="/song/4">
+          <FontAwesomeIcon className="player__icon" icon={faForwardStep} />
+        </Link>
       </div>
       <div className="player__progress">
         <p>00:00</p>
